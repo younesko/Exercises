@@ -13,7 +13,7 @@ def file2list(o):
     return outer
 
 
-filep= "C:\\Users\\gumis\\OneDrive\\Desktop\\input2.txt"
+filep= "filepath\\input2.txt"
 o = open(filep, "r")
 
 print(sum(sorted(map(sum, file2list(o)))[-3:]))
