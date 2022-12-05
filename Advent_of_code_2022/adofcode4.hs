@@ -24,12 +24,24 @@ checknum (x:y:z:w:xs)
     | (x >= z) && (w >= y) = True  -- the second pair contains the first one
     | (x<=z) && (y>=w) = True     -- opposite of above
     | otherwise = False
+    
+-- check if elements overlap at all
 
+checknum2 [] = False
+checknum2 (_:[]) = False
+checknum2 (_:_:[])= False
+checknum2 (_:_:_:[]) = False
+checknum2 (x:y:z:w:xs) 
+    | (x >= z) && ( x <= w) = True
+    | (z >= x) && (z <= y) = True
+    | otherwise = False
 
 
 main = do
     myinput <- readFile "mypath\\input4.txt"
     let aa = map checknum (map s_to_int (map cc (words myinput)))
-    let rix = length (filter (\x -> x==True) aa)
-    print (rix)
+    let bb = map checknum2 (map s_to_int (map cc (words myinput)))
+    let rix1 = length (filter (\x -> x==True) aa) -- solution to the first part
+    let rix2 = length (filter (\x -> x==True) bb) -- solution to the second part
+    print (rix1, rix2)
 	
