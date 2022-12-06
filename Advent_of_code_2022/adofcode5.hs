@@ -1,5 +1,5 @@
--- Advent of code day 5 
--- cerca di scoprire perchè rico da liste innestate 
+-- Advent of code day 5  just part 1
+-- This code actually doesnt give the right answer 
 
 -- parse the ship cargo to 
 
